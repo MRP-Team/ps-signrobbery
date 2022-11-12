@@ -53,7 +53,7 @@ RegisterNetEvent("qb-signrobbery:client:StopSign", function(data)
                 AlertCops()
             end)
         end
-    end, 2, 6)
+    end, 2, 20)
 end)
 
 RegisterNetEvent("qb-signrobbery:client:WalkingManSign", function(data)
