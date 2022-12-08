@@ -10,9 +10,14 @@ end)
 
 --Functions
 local function AlertCops()
-    -- README: UNCOMMENT WHICHEVER ALERT YOU WANNA USE UNLESS YOU USE A DIFFERENT ALERT SYSTEM
-    --TriggerServerEvent('police:server:policeAlert', 'Sign being stolen') -- Default QBCore Dispatch
-    --exports['ps-dispatch']:SignRobbery() -- ps-dispatch
+    local chance = 75
+  if GetClockHours() >= 1 and GetClockHours() <= 6 then
+    chance = 50
+  end
+  if math.random(1, 100) <= chance then
+    exports['ps-dispatch']:SignRobbery()
+    QBCore.Functions.Notify('Police notified', 'error')
+  end
 end
 
 local function loadAnimDict(dict)
